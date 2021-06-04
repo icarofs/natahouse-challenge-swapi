@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { calculateShipStop } from "../../utils/calculateShipStop";
 import { ListShipStop } from "../ListShipStop";
+import { toast } from "react-toastify";
 import styles from "./styles.module.scss";
 
 export function SearchShipStop({ requiredProps }) {
@@ -17,11 +18,12 @@ export function SearchShipStop({ requiredProps }) {
 
     if (!valueInputMGLT.trim()) {
       handleReset();
+      toast.warning("Enter a valid integer between 1 and 1000000000");
       return;
     }
 
     if (valueInputMGLT > 1000000000 || valueInputMGLT < 0) {
-      alert("Quer bugar a parada tio ?");
+      toast.error("Invalid number");
       handleReset();
       return;
     }
@@ -38,6 +40,7 @@ export function SearchShipStop({ requiredProps }) {
 
     setValueInputMGLT("");
     setShipStopList(requiredPropsToComponentListShipStop);
+    toast.success("List of stops displayed successfully!");
   }
 
   return (
