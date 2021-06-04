@@ -1,3 +1,13 @@
+import Head from "next/head";
+
 export default function Home() {
-  return <h1>Hello nata.house</h1>;
+  return (
+    <>
+      <Head>
+        <title>Nata.house challenge swapi</title>
+      </Head>
+
+      <h1>Hello nata.house</h1>
+    </>
+  );
 }
