@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { SearchShipStop } from "../components/SearchShipStop";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <title>Nata.house challenge swapi</title>
       </Head>
 
-      <h1>Hello nata.house</h1>
+      <SearchShipStop />
     </>
   );
 }
