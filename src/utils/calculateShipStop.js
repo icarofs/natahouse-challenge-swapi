@@ -16,6 +16,6 @@ export function calculateShipStop(distanceInMglt, mglt, consumables) {
   return Math.floor(
     +distanceInMglt /
       +mglt /
-      +(consumables.match(/\d+/)[0] * +units[unitWithoutLastLetter])
+      +(consumablesSplitted[0] * +units[unitWithoutLastLetter])
   );
 }
